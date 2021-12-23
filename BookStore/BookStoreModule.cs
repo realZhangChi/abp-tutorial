@@ -12,9 +12,6 @@ public class BookStoreModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        var configuration = context.Services.GetConfiguration();
-        var hostingEnvironment = context.Services.GetHostingEnvironment();
-
         ConfigureSwaggerServices(context);
     }
 
@@ -23,14 +20,16 @@ public class BookStoreModule : AbpModule
         var app = context.GetApplicationBuilder();
         var env = context.GetEnvironment();
 
+        app.UseRouting();
         if (env.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+        app.UseConfiguredEndpoints();
     }
 
-    
+
     private static void ConfigureSwaggerServices(ServiceConfigurationContext context)
     {
         context.Services.AddSwaggerGen();
