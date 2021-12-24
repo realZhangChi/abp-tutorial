@@ -251,12 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 
-# BookSharing
-src/BookSharing.Web/Logs/*
-src/BookSharing.Web.Host/Logs/*
-src/BookSharing.IdentityServer/Logs/*
-src/BookSharing.HttpApi.Host/Logs/*
-src/BookSharing.HttpApi.Host/Logs/*
-src/BookSharing.DbMigrator/Logs/*
-src/BookSharing.Blazor.Server/Logs/*
-src/BookSharing.Blazor.Server.Tiered/Logs/*
+Logs
